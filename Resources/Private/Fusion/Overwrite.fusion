@@ -1,0 +1,4 @@
+prototype(Neos.Neos:Page) {
+    head.@process.carbon.shy = Carbon.Hyphen:Shy.DeletePlaceholder
+    body.@process.carbon.shy = Carbon.Hyphen:Shy.Replace
+}

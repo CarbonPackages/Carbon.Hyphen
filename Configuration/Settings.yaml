@@ -1,0 +1,22 @@
+Neos:
+  Neos:
+    transliterationRules:
+      de:
+        '||': ''
+      en:
+        '||': ''
+      it:
+        '||': ''
+      fr:
+        '||': ''
+    fusion:
+      autoInclude:
+        'Carbon.Hyphen': true
+
+
+Carbon:
+  Hyphen:
+    Shy:
+      # Which string should be replaced with &shy; Please use regex style. For e.g. '||' write '\|\|'
+      replace: '\|\|' 
+      regex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b|\z))'

@@ -3,13 +3,9 @@
     "type": "neos-carbon",
     "description": "Make hyphens easier in Neos CMS",
     "license": "MIT",
+    "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
     "require": {
         "neos/neos": "~3.0 || ~4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Carbon\\Hyphen\\": "Classes"
-        }
     },
     "authors": [
         {
@@ -20,9 +16,21 @@
         }
     ],
     "archive": {
-        "exclude": [".editorconfig", ".gitattributes", ".github", ".gitignore", "CODE_OF_CONDUCT.md"]
+        "exclude": [
+            ".editorconfig",
+            ".gitattributes",
+            ".github",
+            ".gitignore",
+            "CODE_OF_CONDUCT.md"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbon\\Hyphen\\": "Classes"
+        }
     },
     "extra": {
+        "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Carbon.Hyphen",
         "neos": {
             "package-key": "Carbon.Hyphen"

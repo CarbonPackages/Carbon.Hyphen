@@ -2,6 +2,7 @@
     "name": "carbon/hyphen",
     "type": "neos-carbon",
     "description": "Make hyphens easier in Neos CMS",
+    "license": "MIT",
     "require": {
         "neos/neos": "~3.0 || ~4.0"
     },

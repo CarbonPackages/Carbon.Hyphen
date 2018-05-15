@@ -18,5 +18,5 @@ Carbon:
   Hyphen:
     Shy:
       # Which string should be replaced with &shy; Please use regex style. For e.g. '||' write '\|\|'
-      replace: '\|\|' 
-      regex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b|\z))'
+      replace: '\|\|'
+      regex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script|style|code)\b)[^<]*+)*+(?:<(?>textarea|pre|script|style|code)\b|\z))'

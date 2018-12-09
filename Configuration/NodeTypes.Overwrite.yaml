@@ -3,4 +3,4 @@
 #
 
 'Neos.Neos:Node':
-  label: "${String.cropAtWord(String.trim(String.stripTags(String.pregReplace((node.context.inBackend ? String.replace(q(node).property('title') || q(node).property('text'), '||', '') : q(node).property('title') || q(node).property('text')) || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')), '/<br\\W*?\\/?>|\\x{00a0}|[[^:print:]]|\\s+/u', ' '))), 100, '...')}"
+  label: "${String.cropAtWord(String.trim(String.stripTags(String.pregReplace((node.context.inBackend && Configuration.setting('Carbon.Hyphen.Shy.replaceBackendLabel') ? String.replace(q(node).property('title') || q(node).property('text'), Configuration.setting('Carbon.Hyphen.Shy.replaceBackendLabel'), ''): q(node).property('title') || q(node).property('text')) || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')), '/<br\\W*?\\/?>|\\x{00a0}|[[^:print:]]|\\s+/u', ' '))), 100, '...')}"

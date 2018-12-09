@@ -17,6 +17,8 @@ Neos:
 Carbon:
   Hyphen:
     Shy:
+      # Replace also the default labels in backend. If you want to turn this feature of, set it to false
+      replaceBackendLabel: '||'
       # Which string should be replaced with &shy; Please use regex style. For e.g. '||' write '\|\|'
       replace: '\|\|'
       regex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script|style|code)\b)[^<]*+)*+(?:<(?>textarea|pre|script|style|code)\b|\z))'

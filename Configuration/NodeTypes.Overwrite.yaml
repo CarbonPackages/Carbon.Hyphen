@@ -1,0 +1,6 @@
+#
+# To make the backend trees look good we also remove those || in the labels.
+#
+
+'Neos.Neos:Node':
+  label: "${String.cropAtWord(String.trim(String.stripTags(String.pregReplace((node.context.inBackend ? String.replace(q(node).property('title') || q(node).property('text'), '||', '') : q(node).property('title') || q(node).property('text')) || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')), '/<br\\W*?\\/?>|\\x{00a0}|[[^:print:]]|\\s+/u', ' '))), 100, '...')}"

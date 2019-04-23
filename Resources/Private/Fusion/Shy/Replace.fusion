@@ -1,9 +1,10 @@
 prototype(Carbon.Hyphen:Shy.Replace) < prototype(Neos.Fusion:Value) {
+    input = ${value}
     replace = ${Configuration.setting('Carbon.Hyphen.Shy.replace')}
     addShy = true
     regex = ${'/(?>(\S)' + this.replace + '(\S))' + Configuration.setting('Carbon.Hyphen.Shy.regex') + '/'}
     shy = ${this.addShy ? '$1&shy;$2' : '$1$2'}
-    value = ${String.pregReplace(value, this.regex, this.shy)}
+    value = ${String.pregReplace(this.input, this.regex, this.shy)}
 
     @if {
         environment = ${!this.addShy || node.context.live || node.context.currentRenderingMode.preview}

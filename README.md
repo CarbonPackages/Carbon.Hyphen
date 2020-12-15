@@ -39,11 +39,11 @@ You can easily activate hyphenation for all Neos CMS text- and headline nodetype
 
 ```elm
 prototype(Foo.Bar:Content.Text) {
-  text.@process.hyphenate = Carbon.Hyphen:Html
+  renderer.@process.hyphenate = Carbon.Hyphen:Html
 }
 
 prototype(Foo.Bar:Content.Headline) {
-  title.@process.hyphenate = Carbon.Hyphen:Html
+  title.@process.hyphenate = Carbon.Hyphen:Text
 }
 ```
 
@@ -58,7 +58,7 @@ prototype(Foo.Bar:Component) {
 
     renderer = afx`
         <h2>
-            <Carbon.Hyphen:Html>{props.headline}</Carbon.Hyphen:Html>
+            <Carbon.Hyphen:Text>{props.headline}</Carbon.Hyphen:Text>
         </h2>
     `
 }

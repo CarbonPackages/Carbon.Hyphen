@@ -21,7 +21,7 @@ Just use the `Carbon.Hyphen:Text` Fusion object as a processor or wrapper on the
 ```elm
 superlongValue = 'supercalifragilisticexpialidocious'
 superlongValue.@process.hyphenate = Carbon.Hyphen:Text {
-  locale = 'en_gb'
+  locale = 'en-gb'
 }
 ```
 

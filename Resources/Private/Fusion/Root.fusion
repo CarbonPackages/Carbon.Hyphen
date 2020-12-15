@@ -1,1 +1,36 @@
-include: **/*.fusion
+prototype(Carbon.Hyphen:Component) < prototype(Neos.Fusion:Component) {
+    type = 'text'
+    content = ${value}
+    locale = null
+    threshold = 0
+
+    inBackend = ${documentNode.context.inBackend}
+
+    renderer = afx`
+        {props.inBackend ? props.content : ''}
+        <Carbon.Hyphen:Implementation
+            @if.set={!props.inBackend}
+            type={props.type}
+            locale={props.locale}
+            threshold={props.threshold}
+            content={props.content}
+        />
+    `
+}
+
+prototype(Carbon.Hyphen:Implementation) {
+    @class = 'Carbon\\Hyphen\\Fusion\\Implementation'
+    type = 'text'
+    content = ${value}
+
+    @if {
+        notInBackend = ${!documentNode.context.inBackend}
+        hasString = ${this.content && Type.isString(this.content)}
+    }
+}
+
+prototype(Carbon.Hyphen:Text) < prototype(Carbon.Hyphen:Component)
+
+prototype(Carbon.Hyphen:Html) < prototype(Carbon.Hyphen:Component) {
+    type = 'html'
+}

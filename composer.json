@@ -2,10 +2,12 @@
     "name": "carbon/hyphen",
     "type": "neos-carbon",
     "description": "Make hyphens easier in Neos CMS",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
     "require": {
-        "neos/neos": "~3.0 || ~4.0 || ~5.0 || ~7.0"
+        "neos/flow": "*",
+        "neos/fusion": "*",
+        "vanderlee/syllable": "^1.5"
     },
     "authors": [
         {
@@ -21,7 +23,8 @@
             ".gitattributes",
             ".github",
             ".gitignore",
-            "CODE_OF_CONDUCT.md"
+            "CODE_OF_CONDUCT.md",
+            "LICENSE"
         ]
     },
     "autoload": {

@@ -1,8 +1,0 @@
-prototype(Neos.Neos:Page) {
-    head.@process.carbonShy = Carbon.Hyphen:Shy.DeletePlaceholder {
-        @position = 'end 99999'
-    }
-    body.@process.carbonShy = Carbon.Hyphen:Shy.Replace {
-        @position = 'end 99999'
-    }
-}

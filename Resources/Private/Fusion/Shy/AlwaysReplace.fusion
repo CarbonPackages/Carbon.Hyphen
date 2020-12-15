@@ -1,3 +1,0 @@
-prototype(Carbon.Hyphen:Shy.AlwaysReplace) < prototype(Carbon.Hyphen:Shy.Replace) {
-    @if.environment = true
-}

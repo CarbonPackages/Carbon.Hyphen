@@ -5,8 +5,8 @@
     "license": "GPL-3.0",
     "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
     "require": {
-        "neos/flow": "*",
-        "neos/fusion": "*",
+        "neos/flow": "^4.3 || ^5.0 || ^7.0",
+        "neos/fusion": "^4.3 || ^5.0 || ^7.0",
         "vanderlee/syllable": "^1.5"
     },
     "authors": [

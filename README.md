@@ -1,9 +1,4 @@
-[![Latest Stable Version](https://poser.pugx.org/carbon/hyphen/v/stable)](https://packagist.org/packages/carbon/hyphen)
-[![Total Downloads](https://poser.pugx.org/carbon/hyphen/downloads)](https://packagist.org/packages/carbon/hyphen)
-[![License](https://poser.pugx.org/carbon/hyphen/license)](https://packagist.org/packages/carbon/hyphen)
-[![GitHub forks](https://img.shields.io/github/forks/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Fork)](https://github.com/CarbonPackages/Carbon.Hyphen/fork)
-[![GitHub stars](https://img.shields.io/github/stars/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Stars)](https://github.com/CarbonPackages/Carbon.Hyphen/stargazers)
-[![GitHub watchers](https://img.shields.io/github/watchers/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Watch)](https://github.com/CarbonPackages/Carbon.Hyphen/subscription)
+[![Latest stable version]][packagist] [![Total downloads]][packagist] [![License]][packagist] [![GitHub forks]][fork] [![GitHub stars]][stargazers] [![GitHub watchers]][subscription]
 
 # Carbon.Hyphen Package for Neos CMS
 
@@ -24,3 +19,14 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 ## License
 
 Licensed under MIT, see [LICENSE](LICENSE)
+
+[packagist]: https://packagist.org/packages/carbon/hyphen
+[latest stable version]: https://poser.pugx.org/carbon/hyphen/v/stable
+[total downloads]: https://poser.pugx.org/carbon/hyphen/downloads
+[license]: https://poser.pugx.org/carbon/hyphen/license
+[github forks]: https://img.shields.io/github/forks/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Fork
+[github stars]: https://img.shields.io/github/stars/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Stars
+[github watchers]: https://img.shields.io/github/watchers/CarbonPackages/Carbon.Hyphen.svg?style=social&label=Watch
+[fork]: https://github.com/CarbonPackages/Carbon.Hyphen/fork
+[stargazers]: https://github.com/CarbonPackages/Carbon.Hyphen/stargazers
+[subscription]: https://github.com/CarbonPackages/Carbon.Hyphen/subscription

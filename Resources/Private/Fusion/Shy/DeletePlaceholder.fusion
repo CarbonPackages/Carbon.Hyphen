@@ -1,3 +1,0 @@
-prototype(Carbon.Hyphen:Shy.DeletePlaceholder) < prototype(Carbon.Hyphen:Shy.Replace) {
-    addShy = false
-}

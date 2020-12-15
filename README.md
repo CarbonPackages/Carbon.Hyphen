@@ -4,21 +4,76 @@
 
 ## Make hyphens easier
 
-Optional word-breaks are hard to enter in Neos CMS. This Neos package provides a helper to replace occurences of `||` with the Soft hyphen `&shy;`.
+Optional word-breaks are hard to enter in Neos CMS. This package provides a fusion wrapper for [phpSyllable]
 
 ## Installation
 
-Most of the time you have to make small adjustments to a package (e.g. configuration in `Settings.yaml`). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site packages located under `Packages/Sites/`. To install it correctly go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run following command:
-
-```
-composer require carbon/hyphen --no-update
+```bash
+composer require carbon/hyphen
 ```
 
-The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
+## Usage
 
-## License
+### Text
 
-Licensed under MIT, see [LICENSE](LICENSE)
+Just use the `Carbon.Hyphen:Text` Fusion object as a processor or wrapper on the fusion value that should be hyphenated.
+
+```elm
+superlongValue = 'supercalifragilisticexpialidocious'
+superlongValue.@process.hyphenate = Carbon.Hyphen:Text {
+  locale = 'en_gb'
+}
+```
+
+### HTML
+
+Similar to text elements you can use `Carbon.Hyphen:Html` for HTML elements.
+
+```elm
+someFusionHtml.@process.hyphenate = Carbon.Hyphen:Html
+```
+
+## Neos CMS integration example
+
+You can easily activate hyphenation for all Neos CMS text- and headline nodetypes with following Fusion code:
+
+```elm
+prototype(Foo.Bar:Content.Text) {
+  text.@process.hyphenate = Carbon.Hyphen:Html
+}
+
+prototype(Foo.Bar:Content.Headline) {
+  title.@process.hyphenate = Carbon.Hyphen:Html
+}
+```
+
+or directly on a specific parameter:
+
+```elm
+prototype(Foo.Bar:Component) {
+    headline = Neos.Neos:Editable {
+        property = 'headline'
+        block = false
+    }
+
+    renderer = afx`
+        <h2>
+            <Carbon.Hyphen:Html>{props.headline}</Carbon.Hyphen:Html>
+        </h2>
+    `
+}
+```
+
+## Parameters
+
+**locale** (string) : Reference to the language in which the given string will be hyphenated  
+(Have a look at [syllable languages] for a reference of available languages)
+
+**threshold** (integer, default = `0`) : Minimum amount characters a word needs to have, before it is being hyphenated.
+
+## Credits
+
+This implementation was heavily inspired by [packagefactory/hyphenate].
 
 [packagist]: https://packagist.org/packages/carbon/hyphen
 [latest stable version]: https://poser.pugx.org/carbon/hyphen/v/stable
@@ -30,3 +85,6 @@ Licensed under MIT, see [LICENSE](LICENSE)
 [fork]: https://github.com/CarbonPackages/Carbon.Hyphen/fork
 [stargazers]: https://github.com/CarbonPackages/Carbon.Hyphen/stargazers
 [subscription]: https://github.com/CarbonPackages/Carbon.Hyphen/subscription
+[phpsyllable]: https://github.com/vanderlee/phpSyllable
+[syllable languages]: https://github.com/vanderlee/phpSyllable/tree/master/languages
+[packagefactory/hyphenate]: https://github.com/PackageFactory/hyphenate

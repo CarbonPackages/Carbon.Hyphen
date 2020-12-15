@@ -5,7 +5,7 @@
     "license": "GPL-3.0",
     "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
     "require": {
-        "neos/flow": "^4.3 || ^5.0 || ^7.0",
+        "neos/flow": "^5.3 || 6.0 || ^7.0",
         "neos/fusion": "^4.3 || ^5.0 || ^7.0",
         "vanderlee/syllable": "^1.5"
     },

@@ -4,7 +4,7 @@
 
 ## Make hyphens easier
 
-Optional word-breaks are hard to enter in Neos CMS. This package provides a fusion wrapper for [phpSyllable]
+Optional word-breaks are hard to enter in Neos CMS. This package provides a Fusion wrapper for [phpSyllable]
 
 ## Installation
 
@@ -16,7 +16,7 @@ composer require carbon/hyphen
 
 ### Text
 
-Just use the `Carbon.Hyphen:Text` Fusion object as a processor or wrapper on the fusion value that should be hyphenated.
+Just use the `Carbon.Hyphen:Text` Fusion object as a processor or wrapper on the Fusion value that should be hyphenated.
 
 ```elm
 superlongValue = 'supercalifragilisticexpialidocious'

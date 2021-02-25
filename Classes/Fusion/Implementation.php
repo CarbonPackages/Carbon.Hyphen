@@ -70,7 +70,7 @@ class Implementation extends AbstractFusionObject
 
         Files::createDirectoryRecursively($cacheDirectory);
 
-        $syllable = new Syllable($this->getLocale());
+        $syllable = new Syllable(str_replace('_', '-', $this->getLocale()));
 
         $syllable->getSource()->setPath($languagesDirectory);
         $syllable->getCache()->setPath($cacheDirectory);

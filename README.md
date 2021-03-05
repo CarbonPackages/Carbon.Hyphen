@@ -73,6 +73,19 @@ prototype(Foo.Bar:Component) {
 
 **throwException** (boolean, default = `true`) : Throw exception if no hyphen definition is found
 
+## Custom language mappings
+
+Probably you've got a language defined that is not available in syllable. For example, `en` is not available, but `en-gb` is. Because of that, you can map your language preset to another syllable language: Per default following settings are set in [Settings.Carbon.yaml]:
+
+```yaml
+Carbon:
+  Hyphen:
+    mapping:
+      en: en-gb
+      de-de: de
+      de-at: de
+```
+
 ## Credits
 
 This implementation was heavily inspired by [packagefactory/hyphenate].
@@ -89,4 +102,5 @@ This implementation was heavily inspired by [packagefactory/hyphenate].
 [subscription]: https://github.com/CarbonPackages/Carbon.Hyphen/subscription
 [phpsyllable]: https://github.com/vanderlee/phpSyllable
 [syllable languages]: https://github.com/vanderlee/phpSyllable/tree/master/languages
+[settings.carbon.yaml]: Configuration/Settings.Carbon.yaml
 [packagefactory/hyphenate]: https://github.com/PackageFactory/hyphenate

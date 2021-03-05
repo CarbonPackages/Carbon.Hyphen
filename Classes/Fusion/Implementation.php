@@ -14,6 +14,12 @@ use Vanderlee\Syllable\Syllable;
 class Implementation extends AbstractFusionObject
 {
     /**
+     * @Flow\InjectConfiguration()
+     * @var array
+     */
+    protected $settings;
+
+    /**
      * @Flow\Inject
      * @var Environment
      */
@@ -83,6 +89,10 @@ class Implementation extends AbstractFusionObject
         Files::createDirectoryRecursively($cacheDirectory);
 
         $language = str_replace('_', '-', strtolower($this->getLocale()));
+
+        if (isset($this->settings['mapping'][$language]) && is_string($this->settings['mapping'][$language])) {
+            $language = $this->settings['mapping'][$language];
+        }
 
         if (!$this->texFileExists($language)) {
             $firstPartOfLanguage = explode('-', $language)[0];

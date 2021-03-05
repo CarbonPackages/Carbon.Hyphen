@@ -31,6 +31,8 @@ class Implementation extends AbstractFusionObject
      */
     protected $localizationService;
 
+    protected $languagesDirectory;
+
     public function getContent()
     {
         return $this->fusionValue('content');
@@ -55,10 +57,20 @@ class Implementation extends AbstractFusionObject
         return $this->fusionValue('threshold');
     }
 
+    public function getThrowExeption()
+    {
+        return $this->fusionValue('throwExeption');
+    }
+
+    public function texFileExists(string $language): bool
+    {
+        return file_exists(Files::concatenatePaths([$this->languagesDirectory, "hyph-{$language}.tex"]));
+    }
+
     public function evaluate()
     {
         $package = $this->packageManager->getPackage('vanderlee.syllable');
-        $languagesDirectory = Files::concatenatePaths([
+        $this->languagesDirectory = Files::concatenatePaths([
             $package->getPackagePath(),
             'languages'
         ]);
@@ -70,9 +82,28 @@ class Implementation extends AbstractFusionObject
 
         Files::createDirectoryRecursively($cacheDirectory);
 
-        $syllable = new Syllable(str_replace('_', '-', $this->getLocale()));
+        $language = str_replace('_', '-', strtolower($this->getLocale()));
 
-        $syllable->getSource()->setPath($languagesDirectory);
+        if (!$this->texFileExists($language)) {
+            $firstPartOfLanguage = explode('-', $language)[0];
+            if ($firstPartOfLanguage === $language) {
+                if ($this->getThrowExeption()) {
+                    throw new \Exception("Hyphen definition for '$language' is not available", 1614949800);
+                }
+                return $this->getContent();
+            }
+            if (!$this->texFileExists($firstPartOfLanguage)) {
+                if ($this->getThrowExeption()) {
+                    throw new \Exception("Hyphen definition for '$firstPartOfLanguage' is not available", 1614949900);
+                }
+                return $this->getContent();
+            }
+            $language = $firstPartOfLanguage;
+        }
+
+        $syllable = new Syllable($language);
+
+        $syllable->getSource()->setPath($this->languagesDirectory);
         $syllable->getCache()->setPath($cacheDirectory);
 
         $syllable->setHyphen(new Hyphen\Soft());

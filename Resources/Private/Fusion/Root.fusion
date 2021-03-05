@@ -4,8 +4,8 @@ prototype(Carbon.Hyphen:Component) < prototype(Neos.Fusion:Component) {
     locale = null
     threshold = 0
 
-    // Throw Exeption if no hyphen definition is found
-    throwExeption = true
+    // Throw exception if no hyphen definition is found
+    throwException = true
 
     inBackend = ${documentNode.context.inBackend}
 
@@ -16,7 +16,7 @@ prototype(Carbon.Hyphen:Component) < prototype(Neos.Fusion:Component) {
             type={props.type}
             locale={props.locale}
             threshold={props.threshold}
-            throwExeption={props.throwExeption}
+            throwException={props.throwException}
             content={props.content}
         />
     `

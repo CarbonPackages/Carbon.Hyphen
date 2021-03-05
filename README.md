@@ -71,7 +71,7 @@ prototype(Foo.Bar:Component) {
 
 **threshold** (integer, default = `0`) : Minimum amount characters a word needs to have, before it is being hyphenated.
 
-**throwExeption** (boolean, default = `true`) : Throw Exeption if no hyphen definition is found
+**throwException** (boolean, default = `true`) : Throw exception if no hyphen definition is found
 
 ## Credits
 

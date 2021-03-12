@@ -63,11 +63,6 @@ class Implementation extends AbstractFusionObject
         return $this->fusionValue('threshold');
     }
 
-    public function getThrowException()
-    {
-        return $this->fusionValue('throwException');
-    }
-
     public function texFileExists(string $language): bool
     {
         return file_exists(Files::concatenatePaths([$this->languagesDirectory, "hyph-{$language}.tex"]));
@@ -97,13 +92,13 @@ class Implementation extends AbstractFusionObject
         if (!$this->texFileExists($language)) {
             $firstPartOfLanguage = explode('-', $language)[0];
             if ($firstPartOfLanguage === $language) {
-                if ($this->getThrowException()) {
+                if ($this->settings['throwException']) {
                     throw new \Exception("Hyphen definition for '$language' is not available", 1614949800);
                 }
                 return $this->getContent();
             }
             if (!$this->texFileExists($firstPartOfLanguage)) {
-                if ($this->getThrowException()) {
+                if ($this->settings['throwException']) {
                     throw new \Exception("Hyphen definition for '$firstPartOfLanguage' is not available", 1614949900);
                 }
                 return $this->getContent();

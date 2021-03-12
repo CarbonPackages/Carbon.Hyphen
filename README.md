@@ -71,8 +71,6 @@ prototype(Foo.Bar:Component) {
 
 **threshold** (integer, default = `0`) : Minimum amount characters a word needs to have, before it is being hyphenated.
 
-**throwException** (boolean, default = `true`) : Throw exception if no hyphen definition is found
-
 ## Custom language mappings
 
 Probably you've got a language defined that is not available in syllable. For example, `en` is not available, but `en-gb` is. Because of that, you can map your language preset to another syllable language: Per default following settings are set in [Settings.Carbon.yaml]:
@@ -80,6 +78,8 @@ Probably you've got a language defined that is not available in syllable. For ex
 ```yaml
 Carbon:
   Hyphen:
+    # Throw exception if no hyphen definition is found
+    throwException: true
     mapping:
       en: en-gb
       de-de: de

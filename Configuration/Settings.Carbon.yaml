@@ -1,5 +1,7 @@
 Carbon:
   Hyphen:
+    # Throw exception if no hyphen definition is found
+    throwException: true
     mapping:
       en: en-gb
       de-de: de

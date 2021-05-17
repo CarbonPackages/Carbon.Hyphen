@@ -23,10 +23,7 @@ prototype(Carbon.Hyphen:Implementation) {
     type = 'text'
     content = ${value}
 
-    @if {
-        notInBackend = ${!documentNode.context.inBackend}
-        hasString = ${this.content && Type.isString(this.content)}
-    }
+    @if.hasString = ${this.content && Type.isString(this.content)}
 }
 
 prototype(Carbon.Hyphen:Text) < prototype(Carbon.Hyphen:Component)

@@ -107,7 +107,8 @@ class Implementation extends AbstractFusionObject
         }
 
         $syllable = new Syllable($language);
-
+        $syllable->setLibxmlOptions(LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        
         $syllable->getSource()->setPath($this->languagesDirectory);
         $syllable->getCache()->setPath($cacheDirectory);
 

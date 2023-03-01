@@ -117,8 +117,9 @@ class Implementation extends AbstractFusionObject
 
         switch ($this->getType()) {
             case 'html':
-                $html = mb_convert_encoding($this->getContent(), 'HTML-ENTITIES', "UTF-8");
+                $html = '<div>' . mb_convert_encoding($this->getContent(), 'HTML-ENTITIES', "UTF-8") . '</div>';
                 $result = $syllable->hyphenateHtml($html);
+                $result = substr(trim($result), 5, -6);
                 break;
             case 'test':
                 // Break missing intendedly

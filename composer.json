@@ -7,7 +7,7 @@
     "require": {
         "neos/flow": "*",
         "neos/fusion": "^4.3 || ^5.0 || ^7.0 || ^8.0",
-        "vanderlee/syllable": "^1.5"
+        "vanderlee/syllable": "^1.7"
     },
     "authors": [
         {

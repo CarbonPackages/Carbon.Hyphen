@@ -107,8 +107,7 @@ class Implementation extends AbstractFusionObject
         }
 
         $syllable = new Syllable($language);
-        $syllable->setLibxmlOptions(LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        
+
         $syllable->getSource()->setPath($this->languagesDirectory);
         $syllable->getCache()->setPath($cacheDirectory);
 
@@ -117,9 +116,7 @@ class Implementation extends AbstractFusionObject
 
         switch ($this->getType()) {
             case 'html':
-                $html = '<div>' . mb_convert_encoding($this->getContent(), 'HTML-ENTITIES', "UTF-8") . '</div>';
-                $result = $syllable->hyphenateHtml($html);
-                $result = substr(trim($result), 5, -6);
+                $result = $syllable->hyphenateHtmlText($this->getContent());
                 break;
             case 'test':
                 // Break missing intendedly
